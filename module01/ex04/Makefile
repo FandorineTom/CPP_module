@@ -6,12 +6,12 @@
 #    By: snorthmo <snorthmo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 15:33:25 by snorthmo          #+#    #+#              #
-#    Updated: 2021/03/29 21:58:29 by snorthmo         ###   ########.fr        #
+#    Updated: 2021/03/29 21:58:09 by snorthmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
-SRC = ex01.cpp
+NAME = ex04
+SRC = ex04.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = clang++
 RM = rm -rf

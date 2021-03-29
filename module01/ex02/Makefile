@@ -6,7 +6,7 @@
 #    By: snorthmo <snorthmo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 15:33:25 by snorthmo          #+#    #+#              #
-#    Updated: 2021/03/29 19:28:32 by snorthmo         ###   ########.fr        #
+#    Updated: 2021/03/29 21:58:23 by snorthmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC = Zombie.cpp main.cpp ZombieEvent.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = clang++
 RM = rm -rf
-FLAGS = -g -Wall -Werror -Wextra
+FLAGS = -g -Wall -Werror -Wextra -std=c++98
 
 .PHONY: all clean fclean re
 

@@ -6,7 +6,7 @@
 #    By: snorthmo <snorthmo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 15:33:25 by snorthmo          #+#    #+#              #
-#    Updated: 2021/03/29 15:34:04 by snorthmo         ###   ########.fr        #
+#    Updated: 2021/03/29 21:58:34 by snorthmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC = Pony.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = clang++
 RM = rm -rf
-FLAGS = -g -Wall -Werror -Wextra
+FLAGS = -g -Wall -Werror -Wextra -std=c++98
 
 .PHONY: all clean fclean re
 
