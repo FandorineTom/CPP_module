@@ -6,11 +6,11 @@
 #    By: snorthmo <snorthmo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 15:33:25 by snorthmo          #+#    #+#              #
-#    Updated: 2021/03/30 19:31:03 by snorthmo         ###   ########.fr        #
+#    Updated: 2021/03/30 19:37:02 by snorthmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brain
+NAME = weapon
 SRC = HumanA.cpp main.cpp HumanB.cpp Weapon.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = clang++

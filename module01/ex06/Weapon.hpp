@@ -11,7 +11,7 @@ class Weapon {
 		Weapon(const std::string &weapon);
 
 		const std::string	&getType() const;
-		void				setType(std::string &type);
+		void				setType(const std::string &type);
 
 		~Weapon();
 
