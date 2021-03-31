@@ -2,6 +2,20 @@
 #include <string>
 #include <fstream>
 
+void	replace(const std::string &find, const std::string &rep, std::ifstream &in, std::ofstream &out)
+{
+	std::string data;
+	in >> data;
+	std::size_t found = 0;
+	while (found != std::string::npos)
+	{
+		found = data.find(find);
+		if (found != std::string::npos)
+			data.replace(found, rep.length(), rep);
+	}
+	out << data << std::endl;
+}
+
 int     main(int argc, char **argv)
 {
 	if (argc != 4)
@@ -16,10 +30,23 @@ int     main(int argc, char **argv)
 		std::cout << "The strings cannot be empty\n";
 		return (1);
 	}
-	std::ifstream original_file(argv[1]);
+	std::ifstream original_file;
+	original_file.open(argv[1]);
 	if (!original_file.is_open())
 	{
 		std::cout << "Cannot open the file\n";
 		return (1);
 	}
+	std::ofstream my_file;
+	std::string name = argv[1];
+	my_file.open(name + ".replace", std::ios::out | std::ios::trunc);
+	if (!my_file.is_open())
+	{
+		std::cout << "Cannot open the file\n";
+		return (1);
+	}
+	replace(s1, s2, original_file, my_file);
+	original_file.close();
+	my_file.close();
+	return(0);
 }
