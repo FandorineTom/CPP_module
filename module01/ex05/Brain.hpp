@@ -10,11 +10,12 @@ class Brain {
 		Brain();
 
 		std::string	identify() const;
+		std::string	getSyze() const;
 
 		~Brain();
 
 	private:
-		std::string size;
+		std::string _size;
 };
 
 #endif
