@@ -5,15 +5,24 @@
 void	replace(const std::string &find, const std::string &rep, std::ifstream &in, std::ofstream &out)
 {
 	std::string data;
-	in >> data;
-	std::size_t found = 0;
-	while (found != std::string::npos)
+	while (in >> data)
 	{
-		found = data.find(find);
-		if (found != std::string::npos)
-			data.replace(found, rep.length(), rep);
+		std::size_t found = data.find(find);
+		while (found != std::string::npos)
+		{
+			found = data.find(find);
+			if (found != std::string::npos)
+			{
+				std::size_t len;
+				if (rep.length() < find.length())
+					len = find.length();
+				else
+					len = find.length();
+				data.replace(found, len, rep);
+			}
+		}
+		out << data << std::endl;
 	}
-	out << data << std::endl;
 }
 
 int     main(int argc, char **argv)
