@@ -10,6 +10,14 @@ ScavTrap::ScavTrap() {
 	_ranged_attack_damage = 15;
 	_armor_damage_reduction = 3;
 	_name = "Nobody";
+	std::string attacks[5] = { "Care to have a friendly duel? ",
+								"I will prove to you my robotic superiority! ",
+								"It's about to get magical! ",
+								"Man versus machine! Very tiny streamlined machine! ",
+								"Dance battle! Or, you know... regular battle. "};
+	for (int i = 0; i < 5; i++) {
+		_attack_random[i] = attacks[i];
+	}
 	std::cout << "Let's get this party started! " << "ScavTrap with no name created\n";
 }
 

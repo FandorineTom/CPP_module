@@ -4,48 +4,49 @@
 int main()
 {
 	srand(time(NULL));
-	FragTrap	Claptrap("\033[0;32mMORTY\033[0;0m");
+	ClapTrap	Claptrap("\033[0;32mCORLEONE\033[0;0m");
+	FragTrap	Fragtrap("\033[0;32mMORTY\033[0;0m");
 	ScavTrap	Scavtrap("\033[0;32mRICK\033[0;0m");
 	std::string	target("\033[0;31mOAF\033[0;0m");
 
 	std::cout << std::endl;
 	std::cout << "\t\t\tFLAGTRAP: Checking every kind of attack and taking damage\n";
 	std::cout << std::endl;
-	Claptrap.rangedAttack(target);
-	Claptrap.meleeAttack(target);
-	Claptrap.takeDamage(3);
-	Claptrap.rangedAttack(target);
-	Claptrap.takeDamage(65);
-	Claptrap.meleeAttack(target);
-	Claptrap.takeDamage(50);
-	Claptrap.rangedAttack(target);
-	Claptrap.meleeAttack(target);
+	Fragtrap.rangedAttack(target);
+	Fragtrap.meleeAttack(target);
+	Fragtrap.takeDamage(3);
+	Fragtrap.rangedAttack(target);
+	Fragtrap.takeDamage(65);
+	Fragtrap.meleeAttack(target);
+	Fragtrap.takeDamage(50);
+	Fragtrap.rangedAttack(target);
+	Fragtrap.meleeAttack(target);
 	std::cout << std::endl;
 
 	std::cout << "\t\t\tFLAGTRAP: Checking repairing\n";
 	std::cout << std::endl;
-	Claptrap.rangedAttack(target);
-	Claptrap.meleeAttack(target);
-	Claptrap.beRepaired(40);
-	Claptrap.rangedAttack(target);
-	Claptrap.meleeAttack(target);
-	Claptrap.beRepaired(80);
-	Claptrap.rangedAttack(target);
-	Claptrap.meleeAttack(target);
+	Fragtrap.rangedAttack(target);
+	Fragtrap.meleeAttack(target);
+	Fragtrap.beRepaired(40);
+	Fragtrap.rangedAttack(target);
+	Fragtrap.meleeAttack(target);
+	Fragtrap.beRepaired(80);
+	Fragtrap.rangedAttack(target);
+	Fragtrap.meleeAttack(target);
 	std::cout << std::endl;
 
 	std::cout << "\t\t\tFLAGTRAP: Checking random energy attacks\n";
 	std::cout << std::endl;
-	Claptrap.vaulthunter_dot_exe(target);
-	Claptrap.vaulthunter_dot_exe(target);
-	Claptrap.vaulthunter_dot_exe(target);
-	Claptrap.vaulthunter_dot_exe(target);
-	Claptrap.vaulthunter_dot_exe(target);
-	Claptrap.beRepaired(40);
-	Claptrap.vaulthunter_dot_exe(target);
-	Claptrap.vaulthunter_dot_exe(target);
-	Claptrap.beRepaired(100);
-	Claptrap.vaulthunter_dot_exe(target);
+	Fragtrap.vaulthunter_dot_exe(target);
+	Fragtrap.vaulthunter_dot_exe(target);
+	Fragtrap.vaulthunter_dot_exe(target);
+	Fragtrap.vaulthunter_dot_exe(target);
+	Fragtrap.vaulthunter_dot_exe(target);
+	Fragtrap.beRepaired(40);
+	Fragtrap.vaulthunter_dot_exe(target);
+	Fragtrap.vaulthunter_dot_exe(target);
+	Fragtrap.beRepaired(100);
+	Fragtrap.vaulthunter_dot_exe(target);
 	std::cout << std::endl;
 
 	std::cout << "\t\t\tSCAVTRAP: Checking every kind of attack and taking damage\n";

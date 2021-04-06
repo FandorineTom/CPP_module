@@ -6,7 +6,7 @@
 #include <iomanip>
 
 class ClapTrap {
-	private:
+	protected:
 		unsigned	_hit_points;
 		unsigned	_max_hit_points;
 		unsigned	_energy_points;
@@ -18,6 +18,10 @@ class ClapTrap {
 		unsigned	_armor_damage_reduction;
 		std::string	_range_message;
 		std::string	_melee_message;
+		std::string _not_enough_points;
+		std::string _taking_damage_message;
+		std::string _armor_message;
+		std::string _being_revived_message;
 
 	public:
 		ClapTrap();

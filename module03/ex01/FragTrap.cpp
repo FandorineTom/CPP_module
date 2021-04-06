@@ -10,6 +10,14 @@ FragTrap::FragTrap() {
 	_ranged_attack_damage = 20;
 	_armor_damage_reduction = 5;
 	_name = "Nobody";
+	std::string attacks[5] = { "Get ready for some Fragtrap face time! ",
+								"I'm a tornado of death and bullets! ",
+								"Take two bullets, then call me in the morning. ",
+								"Ready for the PUNCHline?! ",
+								"I am Fire, I am Death! "};
+	for (int i = 0; i < 5; i++) {
+		_attack_random[i] = attacks[i];
+	}
 	std::cout << "Look out everybody! Things are about to get awesome! " << "Fragtrap with no name created\n";
 }
 
