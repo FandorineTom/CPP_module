@@ -10,7 +10,7 @@ FragTrap::FragTrap() {
 	_ranged_attack_damage = 20;
 	_armor_damage_reduction = 5;
 	_name = "Nobody";
-	std::cout << "Fragtrap with no name created\n";
+	std::cout << "Look out everybody! Things are about to get awesome! " << "Fragtrap with no name created\n";
 }
 
 FragTrap::FragTrap(std::string const &name) {
@@ -31,7 +31,7 @@ FragTrap::FragTrap(std::string const &name) {
 	for (int i = 0; i < 5; i++) {
 		_attack_random[i] = attacks[i];
 	}
-	std::cout << "Fragtrap with name " << _name << " created\n";
+	std::cout << "Look out everybody! Things are about to get awesome! " << "Fragtrap with name " << _name << " created\n";
 }
 
 FragTrap::FragTrap(const FragTrap &copy_fragtrap) {
@@ -121,5 +121,5 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target) {
 }
 
 FragTrap::~FragTrap() {
-	std::cout << "FragTrap " << _name << " destroyrd\n";
+	std::cout << "Argh arghargh death gurgle gurglegurgle urgh... death. " << "FragTrap " << _name << " destroyrd\n";
 }
