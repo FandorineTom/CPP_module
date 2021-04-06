@@ -65,7 +65,7 @@ FragTrap &FragTrap::operator=(const FragTrap &assign_fragtrap) {
 void	FragTrap::rangedAttack(std::string const &target) const {
 	if (!_hit_points) {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(20) << "STOP!" << std::resetiosflags(std::ios::left);
-		std::cout << "What is that smell? Oh, never mind... it's just you! " << _name << " needs to be revivde to attack\n";
+		std::cout << "What is that smell? Oh, never mind... it's just you! " << _name << " needs to be revived to attack\n";
 	}
 	else {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(36) << "\033[0;37;41mRANGED ATTACK!\033[0;0m" << std::resetiosflags(std::ios::left);
@@ -76,7 +76,7 @@ void	FragTrap::rangedAttack(std::string const &target) const {
 void	FragTrap::meleeAttack(std::string const &target) const {
 	if (!_hit_points) {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(20) << "STOP!" << std::resetiosflags(std::ios::left);
-		std::cout << "What is that smell? Oh, never mind... it's just you! " << _name << " needs to be revivde to attack\n";
+		std::cout << "What is that smell? Oh, never mind... it's just you! " << _name << " needs to be revived to attack\n";
 	}
 	else {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(36) << "\033[0;37;44mMELEE ATTACK!\033[0;0m" << std::resetiosflags(std::ios::left);
