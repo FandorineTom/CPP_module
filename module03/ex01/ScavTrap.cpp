@@ -10,6 +10,14 @@ ScavTrap::ScavTrap() {
 	_ranged_attack_damage = 15;
 	_armor_damage_reduction = 3;
 	_name = "Nobody";
+	std::string attacks[5] = { "Care to have a friendly duel? ",
+								"I will prove to you my robotic superiority! ",
+								"It's about to get magical! ",
+								"Man versus machine! Very tiny streamlined machine! ",
+								"Dance battle! Or, you know... regular battle. "};
+	for (int i = 0; i < 5; i++) {
+		_attack_random[i] = attacks[i];
+	}
 	std::cout << "Let's get this party started! " << "ScavTrap with no name created\n";
 }
 
@@ -57,7 +65,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &assign_ScavTrap) {
 void	ScavTrap::rangedAttack(std::string const &target) const {
 	if (!_hit_points) {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(20) << "STOP!" << std::resetiosflags(std::ios::left);
-		std::cout << "My assets... frozen! " << _name << " needs to be revivde to attack\n";
+		std::cout << "My assets... frozen! " << _name << " needs to be revived to attack\n";
 	}
 	else {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(36) << "\033[0;37;41mRANGED ATTACK!\033[0;0m" << std::resetiosflags(std::ios::left);
@@ -68,7 +76,7 @@ void	ScavTrap::rangedAttack(std::string const &target) const {
 void	ScavTrap::meleeAttack(std::string const &target) const {
 	if (!_hit_points) {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(20) << "STOP!" << std::resetiosflags(std::ios::left);
-		std::cout << "My assets... frozen! " << _name << " needs to be revivde to attack\n";
+		std::cout << "My assets... frozen! " << _name << " needs to be revived to attack\n";
 	}
 	else {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(36) << "\033[0;37;44mMELEE ATTACK!\033[0;0m" << std::resetiosflags(std::ios::left);

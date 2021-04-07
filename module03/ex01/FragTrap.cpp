@@ -10,6 +10,14 @@ FragTrap::FragTrap() {
 	_ranged_attack_damage = 20;
 	_armor_damage_reduction = 5;
 	_name = "Nobody";
+	std::string attacks[5] = { "Get ready for some Fragtrap face time! ",
+								"I'm a tornado of death and bullets! ",
+								"Take two bullets, then call me in the morning. ",
+								"Ready for the PUNCHline?! ",
+								"I am Fire, I am Death! "};
+	for (int i = 0; i < 5; i++) {
+		_attack_random[i] = attacks[i];
+	}
 	std::cout << "Look out everybody! Things are about to get awesome! " << "Fragtrap with no name created\n";
 }
 
@@ -57,7 +65,7 @@ FragTrap &FragTrap::operator=(const FragTrap &assign_fragtrap) {
 void	FragTrap::rangedAttack(std::string const &target) const {
 	if (!_hit_points) {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(20) << "STOP!" << std::resetiosflags(std::ios::left);
-		std::cout << "What is that smell? Oh, never mind... it's just you! " << _name << " needs to be revivde to attack\n";
+		std::cout << "What is that smell? Oh, never mind... it's just you! " << _name << " needs to be revived to attack\n";
 	}
 	else {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(36) << "\033[0;37;41mRANGED ATTACK!\033[0;0m" << std::resetiosflags(std::ios::left);
@@ -68,7 +76,7 @@ void	FragTrap::rangedAttack(std::string const &target) const {
 void	FragTrap::meleeAttack(std::string const &target) const {
 	if (!_hit_points) {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(20) << "STOP!" << std::resetiosflags(std::ios::left);
-		std::cout << "What is that smell? Oh, never mind... it's just you! " << _name << " needs to be revivde to attack\n";
+		std::cout << "What is that smell? Oh, never mind... it's just you! " << _name << " needs to be revived to attack\n";
 	}
 	else {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(36) << "\033[0;37;44mMELEE ATTACK!\033[0;0m" << std::resetiosflags(std::ios::left);

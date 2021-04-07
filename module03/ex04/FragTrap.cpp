@@ -10,6 +10,12 @@ FragTrap::FragTrap() {
 	_ranged_attack_damage = 20;
 	_armor_damage_reduction = 5;
 	_name = "Nobody";
+	_range_message = "Coffee? Black... like my soul. FR4G-TP ";
+	_melee_message = "Meet professor punch! FR4G-TP ";
+	_not_enough_points = "What is that smell? Oh, never mind... it's just you! ";
+	_taking_damage_message = "I'm too pretty to die! ";
+	_armor_message = "Ladies looove a tough guy! ";
+	_being_revived_message = "Holy crap, that worked? ";
 	std::string attacks[5] = { "Get ready for some Fragtrap face time! ",
 								"I'm a tornado of death and bullets! ",
 								"Take two bullets, then call me in the morning. ",
@@ -31,6 +37,12 @@ FragTrap::FragTrap(std::string const &name) {
 	_ranged_attack_damage = 20;
 	_armor_damage_reduction = 5;
 	_name = name;
+	_range_message = "Coffee? Black... like my soul. FR4G-TP ";
+	_melee_message = "Meet professor punch! FR4G-TP ";
+	_not_enough_points = "What is that smell? Oh, never mind... it's just you! ";
+	_taking_damage_message = "I'm too pretty to die! ";
+	_armor_message = "Ladies looove a tough guy! ";
+	_being_revived_message = "Holy crap, that worked? ";
 	std::string attacks[5] = { "Get ready for some Fragtrap face time! ",
 								"I'm a tornado of death and bullets! ",
 								"Take two bullets, then call me in the morning. ",
@@ -56,64 +68,16 @@ FragTrap &FragTrap::operator=(const FragTrap &assign_fragtrap) {
 	_melee_attack_damage = assign_fragtrap._melee_attack_damage;
 	_ranged_attack_damage = assign_fragtrap._ranged_attack_damage;
 	_armor_damage_reduction = assign_fragtrap._armor_damage_reduction;
+	_range_message = assign_fragtrap._range_message;
+	_melee_message = assign_fragtrap._melee_message;
+	_not_enough_points = assign_fragtrap._not_enough_points;
+	_taking_damage_message = assign_fragtrap._taking_damage_message;
+	_armor_message = assign_fragtrap._armor_message;
+	_being_revived_message = assign_fragtrap._being_revived_message;
 	for (int i = 0; i < 5; i++) {
 		_attack_random[i] = assign_fragtrap._attack_random[i];
 	}
 	return (*this);
-}
-
-void	FragTrap::rangedAttack(std::string const &target) const {
-	if (!_hit_points) {
-		std::cout << std::setiosflags(std::ios::left) << std::setw(20) << "STOP!" << std::resetiosflags(std::ios::left);
-		std::cout << "What is that smell? Oh, never mind... it's just you! " << _name << " needs to be revived to attack\n";
-	}
-	else {
-		std::cout << std::setiosflags(std::ios::left) << std::setw(36) << "\033[0;37;41mRANGED ATTACK!\033[0;0m" << std::resetiosflags(std::ios::left);
-		std::cout << "Coffee? Black... like my soul. FR4G-TP " << _name << " attacks " << target << " at range, causing " << _ranged_attack_damage << " points of damage!\n";
-	}
-}
-
-void	FragTrap::meleeAttack(std::string const &target) const {
-	if (!_hit_points) {
-		std::cout << std::setiosflags(std::ios::left) << std::setw(20) << "STOP!" << std::resetiosflags(std::ios::left);
-		std::cout << "What is that smell? Oh, never mind... it's just you! " << _name << " needs to be revived to attack\n";
-	}
-	else {
-		std::cout << std::setiosflags(std::ios::left) << std::setw(36) << "\033[0;37;44mMELEE ATTACK!\033[0;0m" << std::resetiosflags(std::ios::left);
-		std::cout << "Meet professor punch! FR4G-TP " << _name << " attacks " << target << " in melee, causing " << _melee_attack_damage << " points of damage!\n";
-	}
-}
-
-void	FragTrap::takeDamage(unsigned amount) {
-	int res;
-
-	if (amount < _armor_damage_reduction) {
-		std::cout << std::setiosflags(std::ios::left) << std::setw(33) << "\033[1;37mSHIELDS RULE!\033[0;0m" << std::resetiosflags(std::ios::left);
-		std::cout << "Ladies looove a tough guy! " << _name << " reflected all the attacks, no damage caused\n";
-		return ;
-	}
-	else if ((amount - _armor_damage_reduction) < _hit_points)
-		res = amount - _armor_damage_reduction;
-	else
-		res = _hit_points;
-	std::cout << std::setiosflags(std::ios::left) << std::setw(33) << "\033[0;33mAWWW!\033[0;0m" << std::resetiosflags(std::ios::left);
-	std::cout << "I'm too pretty to die! " << _name << " taken " << res << " points of damage\n";
-	_hit_points -= res;
-}
-
-void	FragTrap::beRepaired(unsigned amount) {
-	int res;
-	int res1;
-
-	if ((amount + _hit_points) < _max_hit_points)
-		res = amount;
-	else
-		res = _max_hit_points - _hit_points;
-	_hit_points += res;
-	res1 = (amount + _energy_points < _max_energy_points) ? amount : _max_energy_points - _energy_points;
-	_energy_points = (amount + _energy_points < _max_energy_points) ? _energy_points + amount : _max_energy_points;
-	std::cout << std::setiosflags(std::ios::left) << std::setw(36) << "\033[1;37;42mYEEHAW!\033[0;0m" << std::resetiosflags(std::ios::left);
-	std::cout << "Holy crap, that worked? " << _name << " revived " << res << " hit points and " << res1 << " energy points\n";
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const &target) {
@@ -126,6 +90,26 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target) {
 		std::cout << std::setiosflags(std::ios::left) << std::setw(33) << "\033[1;34mOH NO!\033[0;0m" << std::resetiosflags(std::ios::left);
 		std::cout << "Dangit, I'm out! " << _name << " needs to revive some energy points\n";
 	}
+}
+
+void	FragTrap::set_hit_points(unsigned i) {
+	_hit_points = i;
+}
+
+void	FragTrap::set_max_hit_points(unsigned i) {
+	_max_hit_points = i;
+}
+
+void	FragTrap::set_armor_damage_reduction(unsigned i) {
+	_armor_damage_reduction = i;
+}
+
+void	FragTrap::set_ranged_attack_damage(unsigned i) {
+	_ranged_attack_damage = i;
+}
+
+void	FragTrap::set_level(unsigned i) {
+	_level = i;
 }
 
 FragTrap::~FragTrap() {

@@ -6,12 +6,12 @@
 #    By: snorthmo <snorthmo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/05 19:57:13 by snorthmo          #+#    #+#              #
-#    Updated: 2021/04/07 00:49:24 by snorthmo         ###   ########.fr        #
+#    Updated: 2021/04/07 01:22:48 by snorthmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = claptrap
-SRC = FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp
+NAME = ninjatrap
+SRC = FragTrap.cpp ScavTrap.cpp ClapTrap.cpp NinjaTrap.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = clang++
 RM = rm -rf
