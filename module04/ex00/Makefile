@@ -6,12 +6,12 @@
 #    By: snorthmo <snorthmo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/08 15:19:08 by snorthmo          #+#    #+#              #
-#    Updated: 2021/04/08 15:20:14 by snorthmo         ###   ########.fr        #
+#    Updated: 2021/04/08 16:58:00 by snorthmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = sorcerer
-SRC = Sorcerer.cpp Peon.cpp Victim.cpp main.cpp
+SRC = Sorcerer.cpp Peon.cpp Victim.cpp Peasant.cpp Farmer.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = clang++
 RM = rm -rf

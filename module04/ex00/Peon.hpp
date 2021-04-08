@@ -19,7 +19,7 @@ class Peon : public Victim {
 		Peon &operator=(const Peon &assign_peon);
 
 		const std::string	&getName() const;
-		void		getpolymorphed() const;
+		void				getpolymorphed() const;
 };
 
 #endif
