@@ -19,7 +19,7 @@ class Victim {
 
 		const std::string	&getName() const;
 		void				introduction() const;
-		void		getpolymorphed() const;
+		virtual void		getpolymorphed() const;
 };
 
 std::ostream &operator<<(std::ostream &s, const Victim &victim);
