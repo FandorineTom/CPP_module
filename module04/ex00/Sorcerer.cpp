@@ -29,7 +29,15 @@ const std::string &Sorcerer::getTitle() const {
 	return (_title);
 }
 
+void Sorcerer::polymorph(Victim const &victim) const {
+	victim.getpolymorphed();
+}
+
 Sorcerer::~Sorcerer() {
 	std::cout << _name << ", " << _title << ", is dead. Consequences will never be the same!\n";
 }
 
+std::ostream &operator<<(std::ostream &s, const Sorcerer &sorcerer) {
+	s << "I am " << sorcerer.getName() << ", " << sorcerer.getTitle() << ", and I like ponies!\n";
+	return (s);
+}
