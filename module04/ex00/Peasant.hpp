@@ -14,7 +14,7 @@ class Peasant : public Victim {
 	public:
 		Peasant(std::string name);
 		Peasant(const Peasant &copy_peasant);
-		~Peasant();
+		virtual ~Peasant();
 
 		Peasant &operator=(const Peasant &assign_peasant);
 

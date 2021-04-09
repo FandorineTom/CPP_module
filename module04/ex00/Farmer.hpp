@@ -14,7 +14,7 @@ class Farmer : public Victim {
 	public:
 		Farmer(std::string name);
 		Farmer(const Farmer &copy_farmeer);
-		~Farmer();
+		virtual ~Farmer();
 
 		Farmer &operator=(const Farmer &assign_farmeer);
 

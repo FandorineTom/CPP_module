@@ -14,7 +14,7 @@ class Peon : public Victim {
 	public:
 		Peon(std::string name);
 		Peon(const Peon &copy_peon);
-		~Peon();
+		virtual ~Peon();
 
 		Peon &operator=(const Peon &assign_peon);
 
