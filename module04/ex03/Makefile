@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: snorthmo <snorthmo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/09 22:52:04 by snorthmo          #+#    #+#              #
-#    Updated: 2021/04/09 22:53:12 by snorthmo         ###   ########.fr        #
+#    Created: 2021/04/09 17:12:24 by snorthmo          #+#    #+#              #
+#    Updated: 2021/04/10 01:36:48 by snorthmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = marines
-SRC = AssaultTerminator.cpp Squad.cpp TacticalMarine.cpp main.cpp
+NAME = materia
+SRC = Amateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = clang++
 RM = rm -rf
