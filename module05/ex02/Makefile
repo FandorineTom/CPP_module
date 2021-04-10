@@ -6,12 +6,13 @@
 #    By: snorthmo <snorthmo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/10 02:12:39 by snorthmo          #+#    #+#              #
-#    Updated: 2021/04/10 11:24:32 by snorthmo         ###   ########.fr        #
+#    Updated: 2021/04/10 14:24:14 by snorthmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bureaucrat
-SRC = Bureaucrat.cpp Form.cpp main.cpp
+SRC = Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp\
+		ShrubberyCreationForm.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = clang++
 RM = rm -rf

@@ -47,6 +47,12 @@ void			Bureaucrat::signForm(Form &form) {
 	}
 }
 
+void			Bureaucrat::executeForm(Form &form) {
+	if (form.getSigned() && _grade <= form.getExecGrade())
+		std::cout << _name << " executes " << form.getName() << std::endl;
+	form.execute(*this);
+}
+
 Bureaucrat::GradeTooHighException::GradeTooHighException() : std::exception(), _mes("\033[0;35mBureacrat's grade cannot be higher than 1 (less than 1)\033[0;0m\n") {}
 Bureaucrat::GradeTooHighException::GradeTooHighException(const char *mes) : std::exception(), _mes(mes) {}
 const char *Bureaucrat::GradeTooHighException::what() const throw() {return _mes;}

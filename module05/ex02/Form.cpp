@@ -32,6 +32,13 @@ void			Form::beSigned(const Bureaucrat &bureaucrat) {
 		throw GradeTooLowException("\033[0;33mBureacrat's grade is too low to sign the document, need to go higher\033[0;0m\n");
 }
 
+void			Form::execute(const Bureaucrat &executor) const {
+	if (!_signed)
+		throw UnsignedFormException();
+	if (executor.getGrade() > _exec_grade)
+		throw GradeTooLowException("\033[0;33mBureacrat's grade is too low to execute the document, need to go higher\033[0;0m\n");
+}
+
 Form::GradeTooHighException::GradeTooHighException() : std::exception(), _mes("\033[0;35mThe grade cannot be higher than 1 (less than 1)\033[0;0m\n") {}
 Form::GradeTooHighException::GradeTooHighException(const char *mes) : std::exception(), _mes(mes) {}
 const char *Form::GradeTooHighException::what() const throw() {return _mes;}
@@ -39,6 +46,10 @@ const char *Form::GradeTooHighException::what() const throw() {return _mes;}
 Form::GradeTooLowException::GradeTooLowException() : std::exception(), _mes("\033[0;35mThe grade cannot be lower than 150 (more than 150)\033[0;0m\n") {}
 Form::GradeTooLowException::GradeTooLowException(const char *mes) : std::exception(), _mes(mes) {}
 const char *Form::GradeTooLowException::what() const throw() {return _mes;}
+
+Form::UnsignedFormException::UnsignedFormException() : std::exception(), _mes("\033[0;35mThe form is unsigned cannot execute it!\033[0;0m\n") {}
+Form::UnsignedFormException::UnsignedFormException(const char *mes) : std::exception(), _mes(mes) {}
+const char *Form::UnsignedFormException::what() const throw() {return _mes;}
 
 Form::~Form() {}
 
