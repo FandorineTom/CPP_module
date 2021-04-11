@@ -24,7 +24,21 @@ std::ostream &operator<<(std::ostream &s, const Example &example) {
 
 int		main()
 {
-	std::cout << "\t\t-------INT TESTS-------------\n\n";
+	std::cout << "\t\t-------SUBJECT TESTS-------------\n\n";
+	int a = 2;
+	int b = 3;
+	_swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << _min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << _max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	_swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << _min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << _max( c, d ) << std::endl;
+
+	std::cout << "\n\t\t-------INT TESTS-------------\n\n";
 	{
 		int a = 145;
 		int	b = 86;
