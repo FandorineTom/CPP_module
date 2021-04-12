@@ -119,5 +119,4 @@ int		main()
 			std::cout << ex.what();
 		}
 	}
-	getchar();
 }
