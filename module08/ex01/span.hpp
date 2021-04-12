@@ -4,16 +4,18 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <numeric>
 
 class Span {
 	private:
 		std::vector<int>	*_array;
 		unsigned int		_n;
+		std::vector<int>	*_spans;
 	
 		Span();
 
 	public:
-		Span(unsigned int n);
+		Span(unsigned n);
 		Span(const Span &copy);
 		~Span();
 
@@ -23,9 +25,9 @@ class Span {
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 		void			betterAddNumber(unsigned int n);
+		void			writeSpans();
 
 		int				max();
 		int				min();
-		int				nextToMin();
 		std::vector<int> *getArray() const;
 };

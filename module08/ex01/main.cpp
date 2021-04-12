@@ -6,7 +6,7 @@ int main()
 	srand(time(0));
 	{
 		Span sp = Span(5);
-		sp.addNumber(5);
+		sp.addNumber(6);
 		sp.addNumber(3);
 		sp.addNumber(17);
 		sp.addNumber(9);
@@ -27,7 +27,7 @@ int main()
 			std::cout << ex.what() << std::endl;
 		}
 	}
-	std::cout << "\n\t\t-------ARRAY WITH ONE ELEMETN TEST-------\n\n";
+	std::cout << "\n\t\t-------ARRAY WITH ONE ELEMENT TEST-------\n\n";
 	{
 		Span sp = Span(15);
 		sp.addNumber(5);
@@ -52,7 +52,6 @@ int main()
 
 		std::cout << "MAX in array - " << sp.max() <<std::endl;
 		std::cout << "MIN in array - " << sp.min() <<std::endl;
-		std::cout << "NEXT TO MIN in array - " << sp.nextToMin() <<std::endl;
 		try {
 			sp.addNumber(10001);
 		}
@@ -63,15 +62,13 @@ int main()
 
 	std::cout << "\n\t\t-------HUGE RANDOM ARRAY TEST-------\n\n";
 	{
-		Span sp = Span(20000);
-		std::cout << RAND_MAX << std::endl;
-		sp.betterAddNumber(20000);
+		Span sp = Span(15000);
+		sp.betterAddNumber(15000);
 		std::cout << "Shortest span - " << sp.shortestSpan() << std::endl;
 		std::cout << "Longest span - " << sp.longestSpan() << std::endl;
 
 		std::cout << "MAX in array - " << sp.max() <<std::endl;
 		std::cout << "MIN in array - " << sp.min() <<std::endl;
-		std::cout << "NEXT TO MIN in array - " << sp.nextToMin() <<std::endl;
 		try {
 			sp.addNumber(10001);
 		}
