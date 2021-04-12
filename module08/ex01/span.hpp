@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 class Span {
 	private:
@@ -21,6 +22,7 @@ class Span {
 		void			addNumber(int n);
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
+		void			betterAddNumber(unsigned int n);
 
 		int				max();
 		int				min();

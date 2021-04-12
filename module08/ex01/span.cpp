@@ -22,22 +22,31 @@ Span::~Span() {delete _array;}
 
 void	Span::addNumber(int n) {
 	if (_array->size() == _n)
-		throw std::out_of_range("The array is already full, can't add any more elemets");
+		throw std::out_of_range("\033[0;31mThe array is already full, can't add any more elemets\033[0;0m");
 	std::vector<int>::iterator i;
 	i = std::find(_array->begin(), _array->end(), n);
 	if (i != _array->end())
-		throw std::out_of_range("The element is already in set");
+		throw std::out_of_range("\033[0;31mThe element is already in set\033[0;0m");
 	_array->push_back(n);
 }
 
 unsigned int	Span::longestSpan() {
+	if (_array->size() == 0 || _array->size() == 1)
+		throw std::out_of_range("\033[0;31mThe array is empty or has only one element, cannot find the span\033[0;0m");
 	std::sort(_array->begin(), _array->end());
 	return _array->at(_array->size() - 1) - _array->at(0);
 }
 
 unsigned int	Span::shortestSpan() {
+	if (_array->size() == 0 || _array->size() == 1)
+		throw std::out_of_range("\033[0;31mThe array is empty or has only one element, cannot find the span\033[0;0m");
 	std::sort(_array->begin(), _array->end());
 	return _array->at(1) - _array->at(0);
+}
+
+void			Span::betterAddNumber(unsigned int n) {
+	for (unsigned int i = 0; i < n; i++)
+		_array->push_back(rand());
 }
 
 int				Span::max() {
