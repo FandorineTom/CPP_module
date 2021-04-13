@@ -40,3 +40,5 @@ class MutantStack : public std::stack<T> {
 		iterator	begin();
 		iterator	end();
 };
+
+#include "mutantstack.cpp"

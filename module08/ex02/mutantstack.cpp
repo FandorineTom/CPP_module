@@ -13,6 +13,9 @@ MutantStack<T> &MutantStack<T>::operator=(const MutantStack<T> &assign) {
 }
 
 template<typename T>
+MutantStack<T>::~MutantStack() {}
+
+template<typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin() {
 	return typename MutantStack<T>::iterator(&this->top() - (this->size() - 1));
 }
@@ -22,8 +25,6 @@ typename MutantStack<T>::iterator MutantStack<T>::end() {
 	return typename MutantStack<T>::iterator(&this->top() + 1);
 }
 
-template<typename T>
-MutantStack<T>::~MutantStack() {}
 
 template<typename T>
 MutantStack<T>::iterator::iterator(T *ptr) : _ptr(ptr) {}
@@ -47,13 +48,13 @@ bool	MutantStack<T>::iterator::operator==(iterator const &it) const {return _ptr
 template<typename T>
 bool	MutantStack<T>::iterator::operator!=(iterator const &it) const {return _ptr != it._ptr;}
 template<typename T>
-bool	MutantStack<T>::iterator::operator>=(iterator const &it) const {return _ptr >= it._ptr;}
+bool	MutantStack<T>::iterator::operator>=(iterator const &it) const {return *_ptr >= *it._ptr;}
 template<typename T>
-bool	MutantStack<T>::iterator::operator<=(iterator const &it) const {return _ptr <= it._ptr;}
+bool	MutantStack<T>::iterator::operator<=(iterator const &it) const {return *_ptr <= *it._ptr;}
 template<typename T>
-bool	MutantStack<T>::iterator::operator<(iterator const &it) const {return _ptr < it._ptr;}
+bool	MutantStack<T>::iterator::operator<(iterator const &it) const {return *_ptr < *it._ptr;}
 template<typename T>
-bool	MutantStack<T>::iterator::operator>(iterator const &it) const {return _ptr > it._ptr;}
+bool	MutantStack<T>::iterator::operator>(iterator const &it) const {return *_ptr > *it._ptr;}
 template<typename T>
 T		&MutantStack<T>::iterator::operator*() const {return *_ptr;}
 

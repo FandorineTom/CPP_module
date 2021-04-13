@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: snorthmo <snorthmo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/12 02:31:23 by snorthmo          #+#    #+#              #
-#    Updated: 2021/04/12 23:33:33 by snorthmo         ###   ########.fr        #
+#    Created: 2021/04/12 12:04:32 by snorthmo          #+#    #+#              #
+#    Updated: 2021/04/13 10:32:57 by snorthmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = mutantstack
-SRC = mutantstack.cpp main.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = clang++
 RM = rm -rf
