@@ -6,14 +6,13 @@ int main()
 	srand(time(0));
 	{
 		Span sp = Span(5);
-		sp.addNumber(6);
+		sp.addNumber(5);
 		sp.addNumber(3);
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
-		// std::cout << sp.getArray()->size() << std::endl;
 	}
 
 	std::cout << "\n\t\t-------EMPTY ARRAY TEST-------\n\n";
@@ -42,11 +41,11 @@ int main()
 
 	std::cout << "\n\t\t-------ARRAY TEST-------\n\n";
 	{
+		Span sp2 = Span(15);
+		for (unsigned int i = 0; i < 15; i++)
+			sp2.addNumber(rand());
 		Span sp = Span(15);
-		sp.betterAddNumber(15);
-		for (std::vector<int>::const_iterator i = sp.getArray()->begin(); i != sp.getArray()->end(); ++i)
-			std::cout << *i << ' ';
-		std::cout << std::endl;
+		sp.betterAddNumber(sp2.getArray());
 		std::cout << "Shortest span - " << sp.shortestSpan() << std::endl;
 		std::cout << "Longest span - " << sp.longestSpan() << std::endl;
 
@@ -62,8 +61,11 @@ int main()
 
 	std::cout << "\n\t\t-------HUGE RANDOM ARRAY TEST-------\n\n";
 	{
+		Span sp2 = Span(15000);
+		for (unsigned int i = 0; i < 15000; i++)
+			sp2.addNumber(rand());
 		Span sp = Span(15000);
-		sp.betterAddNumber(15000);
+		sp.betterAddNumber(sp2.getArray());
 		std::cout << "Shortest span - " << sp.shortestSpan() << std::endl;
 		std::cout << "Longest span - " << sp.longestSpan() << std::endl;
 
